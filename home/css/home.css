@@ -667,3 +667,35 @@
     top: 172px;
   }
 }
+
+@media(max-width:760px){
+  .review-card {
+    min-height: 250px;
+    padding: 18px;
+  }
+
+  .review-person {
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+    font-size: .78rem;
+  }
+
+  .review-card h3 {
+    margin: 14px 0 8px;
+    font-size: .78rem;
+  }
+
+  .review-card p {
+    font-size: .72rem;
+    line-height: 1.42;
+  }
+
+  .verified {
+    margin-top: 14px;
+    font-size: .62rem;
+  }
+}
