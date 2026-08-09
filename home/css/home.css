@@ -111,6 +111,27 @@
   .compare-section .comparison-cta .btn{grid-column:1/-1;width:100%;min-width:0}
 }
 
+@media(max-width:760px){
+  .attachment-list.swiper-initialized,
+  .review-cards.swiper-initialized,
+  .ugc-strip.swiper-initialized{max-width:100%;overflow:hidden}
+  .compare-section .site-container{width:var(--container)}
+  .compare-section .comparison{overflow:hidden}
+  .compare-section .compare-grid{min-width:0;grid-template-columns:1.16fr repeat(3,minmax(0,.95fr))}
+  .compare-section .compare-cell{min-width:0;min-height:44px;padding:8px 5px;font-size:.62rem;line-height:1.22;word-break:break-word}
+  .compare-section .compare-head{height:126px;min-height:126px;padding:10px 5px 8px}
+  .compare-section .compare-head b{font-size:.78rem}
+  .compare-section .compare-head small{font-size:.58rem}
+  .compare-section .compare-intro h2{font-size:clamp(2rem,10vw,2.8rem)}
+  .compare-section .compare-intro p:not(.eyebrow),
+  .compare-section .compare-intro .eyebrow{display:none}
+  .compare-section .compare-badge{top:8px;padding:4px 6px;font-size:.44rem;letter-spacing:.03em}
+  .compare-section .compare-label{gap:6px;font-size:.6rem}
+  .compare-section .compare-label .ph{width:22px;height:22px;flex-basis:22px;font-size:.82rem}
+  .compare-section .comparison-cta{grid-template-columns:1fr;padding:18px;gap:12px}
+  .compare-section .comparison-cta__icon{display:none}
+}
+
 @media(min-width:761px){
   #engineering .engineering-grid{grid-template-columns:.68fr 1.32fr !important;gap:24px}
   #engineering .engineering-visual{margin-left:clamp(-96px,-6vw,-42px)}
@@ -170,4 +191,111 @@
 @media(max-width:760px){
   .quiet-copy,.included-copy,.engineering-copy{position:static}
   .support-card{position:static}
+}
+
+@media(max-width:900px){
+  .hero__grid,
+  .problem-grid,
+  .story-grid,
+  .attachments-layout,
+  .quiet-grid,
+  .included-grid,
+  .engineering-grid,
+  .why-grid,
+  .about-card,
+  .final-card,
+  .offer-grid,
+  .reviews-layout,
+  .faq-layout,
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .product-info {
+    grid-column: auto;
+  }
+
+  .product-stage {
+    position: relative;
+    top: auto;
+  }
+
+  .product-thumbs,
+  .speed-cards,
+  .product-features,
+  .rhythm-grid,
+  .action-cards,
+  .story-cards,
+  .attachment-list,
+  .bundle-grid,
+  .review-cards,
+  .ugc-strip,
+  .feature-tiles,
+  .comparison {
+    max-width: 100%;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .attachment-list.is-swiper,
+  .review-cards.is-swiper,
+  .ugc-strip.is-swiper {
+    width: 100%;
+    max-width: 100%;
+    overflow: clip;
+    contain: layout paint;
+  }
+
+  .attachment-list.is-swiper > .swiper-wrapper,
+  .review-cards.is-swiper > .swiper-wrapper,
+  .ugc-strip.is-swiper > .swiper-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media(max-width:900px){
+  .rhythm-grid,
+  .action-cards,
+  .story-cards,
+  .bundle-grid,
+  .review-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+
+  .rhythm-card,
+  .action-card,
+  .story-card,
+  .bundle-card,
+  .review-card {
+    min-width: 0;
+    scroll-snap-align: unset;
+  }
+
+  .attachment-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+
+  .attachment-item {
+    min-width: 0;
+    scroll-snap-align: unset;
+  }
+
+  .ugc-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .feature-tiles {
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
 }

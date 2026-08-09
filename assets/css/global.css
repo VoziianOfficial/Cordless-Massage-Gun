@@ -1,12 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip
+}
+
+@supports not (overflow-x: clip) {
+
+  html,
+  body {
+    overflow-x: hidden
+  }
+}
+
 body {
   font-family: var(--sans);
   color: var(--espresso);
   background: var(--cream);
   font-size: 15px;
-  line-height: 1.55;
-  overflow-x: hidden
+  line-height: 1.55
 }
 
 body.is-locked {
@@ -15,6 +28,7 @@ body.is-locked {
 
 .site-container {
   width: var(--container);
+  max-width: 100%;
   margin-inline: auto
 }
 
@@ -499,7 +513,9 @@ body.is-locked {
   position: fixed;
   inset: 0;
   z-index: 130;
-  pointer-events: none
+  pointer-events: none;
+  overflow: clip;
+  contain: layout paint
 }
 
 .drawer-backdrop {
@@ -790,8 +806,11 @@ body.is-locked {
   }
 
   .benefit-row {
-    overflow-x: auto;
-    grid-template-columns: repeat(3, minmax(230px, 1fr))
+    overflow: visible;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch
   }
 }
 

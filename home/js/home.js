@@ -18,5 +18,4 @@
     addEventListener('scroll',()=>requestAnimationFrame(updateActionParallax),{passive:true});
     addEventListener('resize',updateActionParallax);
   }
-  if(window.Swiper&&matchMedia('(max-width: 760px)').matches){['.attachment-list','.ugc-strip','.review-cards'].forEach(selector=>{const el=q(selector);if(el)new Swiper(el,{slidesPerView:1.15})})}
 })();

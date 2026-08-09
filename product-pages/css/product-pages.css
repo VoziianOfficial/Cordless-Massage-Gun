@@ -519,7 +519,10 @@
     .bundle-table,
     .review-wall {
         display: flex;
-        overflow-x: auto
+        overflow-x: auto;
+        max-width: 100%;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch
     }
 
     .routine-card,
@@ -551,7 +554,10 @@
 
     .mini-speed {
         overflow-x: auto;
-        grid-template-columns: repeat(5, 85px)
+        grid-template-columns: repeat(5, 85px);
+        max-width: 100%;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch
     }
 }
 
@@ -1005,5 +1011,30 @@
         font-size: 1.1rem;
         letter-spacing: .16em;
         padding: 0 20px
+    }
+}
+
+@media(max-width:800px) {
+
+    .routine-grid,
+    .attachments-catalog,
+    .bundle-table,
+    .review-wall {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: visible;
+        max-width: 100%
+    }
+
+    .routine-card,
+    .attachment-card,
+    .bundle-page-card,
+    .review-wall article {
+        min-width: 0
+    }
+
+    .mini-speed {
+        overflow: visible;
+        grid-template-columns: repeat(5, minmax(0, 1fr))
     }
 }
