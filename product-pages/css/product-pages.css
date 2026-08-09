@@ -677,87 +677,125 @@
 }
 
 #specs .spec-grid {
-    gap: 18px;
-    border: 0
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+    border: 0;
+    align-items: stretch
 }
 
 #specs .spec-tile {
     position: relative;
     display: grid;
-    grid-template-rows: auto auto 1fr;
-    gap: 14px;
-    min-height: 250px;
-    padding: 28px;
-    border: 1px solid rgba(33, 26, 23, .14);
+    grid-template-rows: auto auto 1fr auto;
+    justify-items: center;
+    gap: 24px;
+    min-height: 430px;
+    padding: 54px 32px 46px;
+    border: 1px solid rgba(33, 26, 23, .08);
     background: var(--ivory);
-    box-shadow: 0 14px 34px rgba(33, 26, 23, .07);
-    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease
+    box-shadow: 0 18px 42px rgba(33, 26, 23, .08);
+    text-align: center;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease
 }
 
 #specs .spec-tile::before {
-    content: "";
+    content: "✓";
     position: absolute;
-    left: 28px;
-    right: 28px;
-    top: 0;
-    height: 4px;
-    background: var(--wine);
-    transform: scaleX(.28);
-    transform-origin: left;
-    transition: transform .28s ease
+    left: 50%;
+    bottom: -31px;
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    background: var(--lime);
+    color: var(--ivory);
+    font-weight: 900;
+    transform: translateX(-50%);
+    box-shadow: 0 14px 28px rgba(33, 26, 23, .16);
+    transition: transform .3s ease, background .3s ease, color .3s ease
+}
+
+#specs .spec-tile:nth-child(3) {
+    background: var(--lime);
+    border-color: var(--lime);
+    color: var(--ivory)
+}
+
+#specs .spec-tile:nth-child(3)::before {
+    background: var(--espresso);
+    color: var(--ivory)
 }
 
 #specs .spec-tile:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     border-color: rgba(107, 15, 26, .42);
-    background: #fffaf2;
-    box-shadow: 0 24px 48px rgba(33, 26, 23, .13)
+    box-shadow: 0 30px 58px rgba(33, 26, 23, .16)
 }
 
 #specs .spec-tile:hover::before {
-    transform: scaleX(1)
+    transform: translateX(-50%) translateY(-5px);
+    background: var(--wine)
 }
 
 #specs .spec-tile b {
-    width: 56px;
-    height: 56px;
+    width: 88px;
+    height: 88px;
     display: grid;
     place-items: center;
-    border: 1px solid rgba(107, 15, 26, .2);
-    background: var(--cream);
-    color: var(--wine);
-    font-size: 1.1rem;
+    border: 1px solid rgba(124, 150, 50, .28);
+    background: var(--ivory);
+    color: var(--lime);
+    font-size: 2rem;
     line-height: 1;
-    transition: border-color .28s ease, background .28s ease, color .28s ease, transform .28s ease
-}
-
-#specs .spec-tile b:not(.real-icon) {
-    width: auto;
-    min-width: 86px;
-    padding: 0 14px;
-    font-size: 1.4rem
+    border-radius: 50%;
+    transition: border-color .3s ease, background .3s ease, color .3s ease, transform .3s ease
 }
 
 #specs .spec-tile:hover b {
     transform: translateY(-3px);
     border-color: var(--wine);
-    background: var(--wine);
-    color: var(--ivory)
+    color: var(--wine)
+}
+
+#specs .spec-tile:nth-child(3) b {
+    border-color: var(--ivory);
+    background: var(--ivory);
+    color: var(--espresso)
 }
 
 #specs .spec-tile strong {
-    align-self: end;
     color: var(--espresso);
-    font-size: .78rem;
-    letter-spacing: .1em;
+    font-family: var(--display);
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: .02em;
     text-transform: uppercase
 }
 
+#specs .spec-tile:nth-child(3) strong,
+#specs .spec-tile:nth-child(3) p {
+    color: var(--ivory)
+}
+
 #specs .spec-tile p {
-    align-self: end;
+    max-width: 230px;
     color: var(--muted);
-    font-size: .88rem;
-    line-height: 1.55
+    font-size: 1rem;
+    line-height: 1.72;
+    align-self: start
+}
+
+@media(max-width:900px) {
+    #specs .spec-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 46px
+    }
+}
+
+@media(max-width:600px) {
+    #specs .spec-grid {
+        grid-template-columns: 1fr
+    }
 }
 
 #engineering {
