@@ -17,6 +17,17 @@ function loadSiteConfig(string $path): array {
     return json_decode($matches[1], true, 512, JSON_THROW_ON_ERROR);
 }
 
+function configValue(array $config, string $path, string $fallback = ''): string {
+    $value = $config;
+    foreach (explode('.', $path) as $key) {
+        if (!is_array($value) || !array_key_exists($key, $value)) {
+            return $fallback;
+        }
+        $value = $value[$key];
+    }
+    return is_scalar($value) ? (string)$value : $fallback;
+}
+
 function field(string $name, int $max = 500): string {
     $value = isset($_POST[$name]) && is_string($_POST[$name]) ? trim($_POST[$name]) : '';
     $value = str_replace(["\r", "\0"], '', $value);
@@ -32,7 +43,11 @@ if (field('website', 120) !== '') {
 
 try {
     $config = loadSiteConfig(__DIR__ . '/config/config.js');
-    $recipient = (string)($config['contact']['email'] ?? '');
+    $brandName = configValue($config, 'brand.name', 'PULSO');
+    $companyName = configValue($config, 'brand.companyName', $brandName);
+    $legalName = configValue($config, 'brand.legalName', $companyName);
+    $contactAddress = configValue($config, 'contact.address');
+    $recipient = configValue($config, 'contact.email');
     if (!filter_var($recipient, FILTER_VALIDATE_EMAIL)) {
         throw new RuntimeException('Recipient configuration is invalid.');
     }
@@ -71,8 +86,14 @@ try {
             );
         }
     }
-    $subject = sprintf('[%s] Website request from %s %s', strtoupper($type), $first, $last);
+    $subject = sprintf('[%s] %s website request from %s %s', strtoupper($type), $brandName, $first, $last);
     $body = implode("\n", [
+        'Brand: ' . $brandName,
+        'Company: ' . $companyName,
+        'Legal name: ' . $legalName,
+        'Configured email: ' . $recipient,
+        'Configured address: ' . ($contactAddress ?: 'Not provided'),
+        '',
         'Form type: ' . $type,
         'First Name: ' . $first,
         'Last Name: ' . $last,
@@ -94,10 +115,11 @@ try {
         'Timestamp: ' . gmdate('c')
     ]);
     $safeName = str_replace(["\r", "\n"], '', $first . ' ' . $last);
+    $senderName = trim(preg_replace('/[\r\n<>]+/', '', $brandName . ' Website'));
     $headers = [
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
-        'From: Website Inquiry <' . $recipient . '>',
+        'From: ' . $senderName . ' <' . $recipient . '>',
         'Reply-To: ' . $safeName . ' <' . $email . '>'
     ];
     if (!@mail($recipient, $subject, $body, implode("\r\n", $headers))) {
@@ -105,6 +127,7 @@ try {
     }
     respond(200, true, 'Thank you! We have successfully received your request. Our team will review your information and get back to you shortly.');
 } catch (Throwable $error) {
-    error_log('PULSO contact error: ' . $error->getMessage());
+    $logBrand = isset($brandName) && $brandName !== '' ? $brandName : 'Site';
+    error_log($logBrand . ' contact error: ' . $error->getMessage());
     respond(500, false, 'We could not process your request right now. Please try again shortly.');
 }
