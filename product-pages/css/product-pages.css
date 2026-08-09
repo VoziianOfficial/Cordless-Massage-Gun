@@ -17,3 +17,7 @@
 .engineering-card__button{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;border:1px solid rgba(33,26,23,.22);color:var(--espresso);font-weight:700;text-transform:lowercase;background:transparent}
 .engineering-card__button:hover{border-color:var(--wine);color:var(--wine);background:rgba(126,41,55,.06)}
 @media(max-width:900px){.engineering-cards{grid-template-columns:1fr}.engineering-card img{height:240px}.engineering-card p{min-height:0}}
+#bundle-hero .page-hero__grid{min-height:0}
+#bundle-hero .page-hero__visual{height:420px;min-height:0;align-self:center}
+#bundle-hero .page-hero__visual img{height:100%;object-fit:cover}
+@media(max-width:800px){#bundle-hero .page-hero__visual{height:300px}}
