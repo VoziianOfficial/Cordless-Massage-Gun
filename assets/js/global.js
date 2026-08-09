@@ -142,7 +142,7 @@
       const wrap=document.createElement('div');
       wrap.className='drawer-item';
       const img=document.createElement('img');
-      img.src=item.image;
+      img.src=(item.image||'').replace('/product/product-main.jpg','/product-main.jpg');
       img.alt='';
       const copy=document.createElement('div');
       const title=document.createElement('h3');
