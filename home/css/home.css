@@ -134,3 +134,25 @@
 @media(max-width:760px){
   #about .about-card>img,#offer .offer-visual{height:320px;max-height:320px}
 }
+
+#faq .faq-intro{width:min(100%,calc((100% - 20px)*.7));max-width:none;margin-right:auto;margin-left:0;text-align:center}
+#faq .faq-layout{align-items:start}
+#faq .accordion{overflow:hidden;border:1px solid rgba(33,26,23,.11);border-radius:8px;background:rgba(255,253,248,.78);box-shadow:0 18px 48px rgba(33,26,23,.06)}
+#faq .faq-item{position:relative;background:transparent;transition:background .22s}
+#faq .faq-item+.faq-item{border-top:1px solid rgba(33,26,23,.09)}
+#faq .faq-item.is-open{background:var(--ivory)}
+#faq .faq-question{min-height:74px;padding:18px 22px 18px 26px;gap:18px;color:var(--espresso);font-size:.86rem;line-height:1.25;letter-spacing:.01em;transition:background .2s,color .2s}
+#faq .faq-question:hover{background:rgba(235,226,215,.5)}
+#faq .faq-question span:first-child{max-width:720px}
+#faq .faq-question span:last-child{width:34px;height:34px;border-color:rgba(33,26,23,.16);background:var(--cream);color:var(--wine);font-size:1.05rem;font-weight:800;transition:transform .22s,background .22s,color .22s,border-color .22s}
+#faq .faq-item.is-open .faq-question span:last-child{transform:rotate(180deg);border-color:var(--wine);background:var(--wine);color:var(--ivory)}
+#faq .faq-answer p{max-width:720px;padding:0 78px 22px 26px;color:var(--muted);font-size:.88rem;line-height:1.65}
+
+@media(max-width:1100px){
+  #faq .faq-intro{width:100%;margin-inline:auto}
+}
+
+@media(max-width:760px){
+  #faq .faq-question{min-height:66px;padding:16px 16px 16px 18px;font-size:.8rem}
+  #faq .faq-answer p{padding:0 18px 18px;font-size:.82rem}
+}
