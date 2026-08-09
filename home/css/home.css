@@ -110,3 +110,9 @@
   .compare-section .comparison-cta{grid-template-columns:auto 1fr;align-items:center}
   .compare-section .comparison-cta .btn{grid-column:1/-1;width:100%;min-width:0}
 }
+
+@media(min-width:761px){
+  #engineering .engineering-grid{grid-template-columns:.68fr 1.32fr !important;gap:24px}
+  #engineering .engineering-visual{margin-left:clamp(-96px,-6vw,-42px)}
+  #engineering .engineering-visual img{width:calc(100% + clamp(42px,6vw,96px));max-height:680px}
+}
