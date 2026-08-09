@@ -4,6 +4,8 @@
 .discount-row{align-items:center;cursor:pointer;transition:color .2s,border-color .2s}
 .discount-row span:first-child,.payment-ready b{display:inline-flex;align-items:center;gap:10px}
 .discount-row .real-icon,.payment-ready .real-icon{font-size:1.2rem}
+.discount-row__icon{width:28px;height:28px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:.95rem;transition:transform .2s}
+.discount-row:hover .discount-row__icon{transform:translateX(4px)}
 .discount-row:hover{color:var(--wine);border-color:#b7a48e}
 .cart-policy{align-items:flex-start}
 .cart-policy .real-icon{width:36px;height:36px;border:1px solid #d4c7b8;background:var(--ivory);font-size:1.18rem;box-shadow:0 10px 20px rgba(33,26,23,.07)}
