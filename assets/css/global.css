@@ -26,3 +26,15 @@ h1 br,h2 br{display:none}
   main h1.display{font-size:clamp(3.15rem,15vw,4.5rem)!important}
   :is(.section-intro,.solution-card,.rhythm,.story-copy,.quiet-copy,.included-copy,.engineering-copy,.why-copy,.rating-panel,.about-card,.offer-copy,.final-copy,.editorial-panel,.durability-band,.collab__copy,.contact-form-wrap) h2.display{font-size:clamp(2.6rem,11.5vw,3.45rem)!important}
 }
+
+.ph{font-size:1.34rem;line-height:1;font-weight:400}
+.icon-btn{color:var(--espresso);transition:transform .2s,border-color .2s,background .2s,color .2s,box-shadow .2s}
+.icon-btn .ph{font-size:1.25rem}
+.icon-btn:hover{transform:translateY(-2px);border-color:#b7a48e;background:var(--ivory);color:var(--wine);box-shadow:0 12px 26px rgba(33,26,23,.12)}
+.real-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--wine);transition:transform .22s,color .22s,border-color .22s,background .22s,box-shadow .22s}
+.benefit__icon.real-icon,.how-icon.real-icon{border:1px solid #d4c7b8;background:var(--ivory);box-shadow:0 10px 22px rgba(33,26,23,.07)}
+.benefit:hover .benefit__icon.real-icon,.how-step:hover .how-icon.real-icon{transform:translateY(-3px);border-color:#a48d73;background:#fffdf8;color:var(--espresso);box-shadow:0 16px 32px rgba(33,26,23,.14)}
+.product-feature .real-icon,.quiet-feature .real-icon,.engineering-item .real-icon,.feature-tile .real-icon{color:var(--wine)}
+.product-feature:hover .real-icon,.quiet-feature:hover .real-icon,.engineering-item:hover .real-icon,.feature-tile:hover .real-icon{transform:translateY(-2px);color:var(--espresso)}
+.swiper-button{transition:transform .2s,border-color .2s,background .2s,color .2s,box-shadow .2s}
+.swiper-button:hover{transform:translateY(-2px);border-color:#b7a48e;background:var(--ivory);color:var(--wine);box-shadow:0 12px 24px rgba(33,26,23,.1)}
