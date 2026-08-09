@@ -315,14 +315,78 @@
 .review-wall {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px
+    gap: 18px
 }
 
 .review-wall article {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 16px;
     background: var(--ivory);
-    border: 1px solid var(--line);
-    padding: 25px;
-    min-height: 230px
+    border: 1px solid rgba(33, 26, 23, .14);
+    padding: 28px;
+    min-height: 280px;
+    box-shadow: 0 14px 34px rgba(33, 26, 23, .07);
+    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease
+}
+
+.review-wall article::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    top: 0;
+    height: 4px;
+    background: var(--wine);
+    transform: scaleX(.26);
+    transform-origin: left;
+    transition: transform .28s ease
+}
+
+.review-wall article:hover {
+    transform: translateY(-6px);
+    border-color: rgba(107, 15, 26, .42);
+    background: #fffaf2;
+    box-shadow: 0 24px 48px rgba(33, 26, 23, .13)
+}
+
+.review-wall article:hover::before {
+    transform: scaleX(1)
+}
+
+.review-wall .stars {
+    color: var(--lime);
+    letter-spacing: .16em;
+    font-size: .82rem;
+    margin: 0
+}
+
+.review-wall h3 {
+    font-family: var(--display);
+    color: var(--espresso);
+    font-size: 2rem;
+    line-height: .92;
+    letter-spacing: .04em;
+    max-width: 94%
+}
+
+.review-wall article>p:not(.stars) {
+    color: var(--muted);
+    line-height: 1.58;
+    font-size: .92rem;
+    margin: 0
+}
+
+.review-wall small {
+    align-self: end;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    color: var(--espresso);
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+    text-transform: uppercase
 }
 
 .durability-band {
@@ -592,6 +656,108 @@
     #transparency .editorial-image {
         height: 280px
     }
+}
+
+#portable .editorial-image {
+    height: 360px;
+    min-height: 0;
+    align-self: start;
+    overflow: hidden
+}
+
+#portable .editorial-image img {
+    height: 100%;
+    object-fit: cover
+}
+
+@media(max-width:800px) {
+    #portable .editorial-image {
+        height: 280px
+    }
+}
+
+#specs .spec-grid {
+    gap: 18px;
+    border: 0
+}
+
+#specs .spec-tile {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 14px;
+    min-height: 250px;
+    padding: 28px;
+    border: 1px solid rgba(33, 26, 23, .14);
+    background: var(--ivory);
+    box-shadow: 0 14px 34px rgba(33, 26, 23, .07);
+    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease
+}
+
+#specs .spec-tile::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    top: 0;
+    height: 4px;
+    background: var(--wine);
+    transform: scaleX(.28);
+    transform-origin: left;
+    transition: transform .28s ease
+}
+
+#specs .spec-tile:hover {
+    transform: translateY(-6px);
+    border-color: rgba(107, 15, 26, .42);
+    background: #fffaf2;
+    box-shadow: 0 24px 48px rgba(33, 26, 23, .13)
+}
+
+#specs .spec-tile:hover::before {
+    transform: scaleX(1)
+}
+
+#specs .spec-tile b {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(107, 15, 26, .2);
+    background: var(--cream);
+    color: var(--wine);
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: border-color .28s ease, background .28s ease, color .28s ease, transform .28s ease
+}
+
+#specs .spec-tile b:not(.real-icon) {
+    width: auto;
+    min-width: 86px;
+    padding: 0 14px;
+    font-size: 1.4rem
+}
+
+#specs .spec-tile:hover b {
+    transform: translateY(-3px);
+    border-color: var(--wine);
+    background: var(--wine);
+    color: var(--ivory)
+}
+
+#specs .spec-tile strong {
+    align-self: end;
+    color: var(--espresso);
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase
+}
+
+#specs .spec-tile p {
+    align-self: end;
+    color: var(--muted);
+    font-size: .88rem;
+    line-height: 1.55
 }
 
 #engineering {
