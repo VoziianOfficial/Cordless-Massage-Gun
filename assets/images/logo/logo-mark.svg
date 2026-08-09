@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-labelledby="t"><title id="t">Pulso pulse mark</title><rect x="2" y="2" width="36" height="36" rx="10" fill="#211A17"/><path d="M8 21h7l3-8 5 15 3-7h6" fill="none" stroke="#CFFF00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="pulso-logo-title">
+  <title id="pulso-logo-title">PULSO heart pulse mark</title>
+  <defs>
+    <linearGradient id="heartFill" x1="64" y1="44" x2="202" y2="224" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF5363"/>
+      <stop offset=".54" stop-color="#FF394E"/>
+      <stop offset="1" stop-color="#E9132B"/>
+    </linearGradient>
+    <linearGradient id="heartGlow" x1="90" y1="44" x2="186" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M128 219.5S32 160.3 32 86.7C32 50.8 58.5 28 89.6 28c18.7 0 31.2 8.4 38.4 22.6C135.2 36.4 147.7 28 166.4 28 197.5 28 224 50.8 224 86.7c0 73.6-96 132.8-96 132.8Z" fill="none" stroke="#FFFDF8" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 219.5S32 160.3 32 86.7C32 50.8 58.5 28 89.6 28c18.7 0 31.2 8.4 38.4 22.6C135.2 36.4 147.7 28 166.4 28 197.5 28 224 50.8 224 86.7c0 73.6-96 132.8-96 132.8Z" fill="url(#heartFill)" stroke="#161616" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M168.5 44.5c24.5 8.2 40.4 28.4 40.4 56.1 0 22.6-11.4 45.3-27.4 65.5l-53.2 53.1c16-9.6 80.7-52.9 80.7-118.6 0-27.7-16-47.9-40.5-56.1Z" fill="#B6081D" opacity=".22"/>
+  <path d="M87.4 37.1c15.9-1.1 29.6 5.7 38.2 21.2l2.4 4.4 2.4-4.4c8.8-15.8 22.7-22.6 39-21.1 14.1 1.3 25.5 7.5 33.5 16.9" fill="none" stroke="url(#heartGlow)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M21 134h72.8l17-34.9c5.3-10.9 20.8-10.8 26 .1l28.6 60.5 16.5-32.2c2.6-5 7.7-8.1 13.3-8.1H235" fill="none" stroke="#FFFDF8" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21 134h72.8l17-34.9c5.3-10.9 20.8-10.8 26 .1l28.6 60.5 16.5-32.2c2.6-5 7.7-8.1 13.3-8.1H235" fill="none" stroke="#161616" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21 134h72.8l17-34.9c5.3-10.9 20.8-10.8 26 .1l28.6 60.5 16.5-32.2c2.6-5 7.7-8.1 13.3-8.1H235" fill="none" stroke="#F4FFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

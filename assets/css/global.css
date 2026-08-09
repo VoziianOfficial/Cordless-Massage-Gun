@@ -109,15 +109,33 @@ body.is-locked {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 1.55rem;
+  gap: 10px;
+  width: fit-content;
+  color: inherit;
+  font-size: 1.6rem;
   font-weight: 800;
-  letter-spacing: .04em
+  letter-spacing: .02em;
+  line-height: 1
 }
 
 .brand img {
-  width: 34px;
-  height: 34px
+  width: 38px;
+  height: 38px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 9px rgba(33, 26, 23, .1))
+}
+
+.brand span {
+  transform: translateY(1px)
+}
+
+.site-footer .brand img,
+.final-card .brand img,
+.offer .brand img,
+.about-card .brand img,
+.durability-band .brand img {
+  filter: drop-shadow(0 0 1px rgba(255, 253, 248, .9)) drop-shadow(0 7px 13px rgba(0, 0, 0, .22))
 }
 
 .brand__menu {
