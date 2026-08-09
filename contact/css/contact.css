@@ -29,13 +29,16 @@
 .form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid rgba(33,26,23,.14);background-color:#fffaf2;color:var(--espresso);font:700 .86rem var(--sans);outline:none;transition:border-color .22s ease,box-shadow .22s ease,background-color .22s ease,color .22s ease}
 .form-field input,.form-field select{height:44px;padding:0 14px}
 .select-shell{position:relative;display:block}
-.select-shell::after{content:"";position:absolute;right:14px;top:50%;width:18px;height:18px;background:var(--wine);transform:translateY(-50%);pointer-events:none;clip-path:polygon(20% 34%,50% 64%,80% 34%,88% 42%,50% 80%,12% 42%)}
-.contact-form-wrap .form-field select{appearance:none!important;-webkit-appearance:none!important;-moz-appearance:none!important;padding-right:44px;background-image:none!important;cursor:pointer}
+.select-shell::after{content:none!important}
+.select-caret{position:absolute;right:15px;top:50%;width:18px;height:18px;display:grid;place-items:center;transform:translateY(-55%);pointer-events:none;color:var(--wine);font-size:1.35rem;font-weight:900;line-height:1}
+.contact-form-wrap .form-field select{appearance:none!important;-webkit-appearance:none!important;-moz-appearance:none!important;padding-right:44px;background:#fffaf2!important;background-image:none!important;background-repeat:no-repeat!important;background-size:0 0!important;mask-image:none!important;-webkit-mask-image:none!important;cursor:pointer}
 .contact-form-wrap .form-field select::-ms-expand{display:none}
 .form-field textarea{min-height:126px;resize:vertical;padding:13px 14px;line-height:1.5}
 .form-field input::placeholder,.form-field textarea::placeholder{color:rgba(109,101,95,.68);font-weight:650}
 .form-field input:hover,.form-field select:hover,.form-field textarea:hover{border-color:rgba(107,15,26,.35);background-color:var(--ivory)}
+.contact-form-wrap .form-field select:hover{background:var(--ivory)!important;background-image:none!important}
 .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--wine);background-color:var(--ivory);box-shadow:0 0 0 3px rgba(107,15,26,.1)}
+.contact-form-wrap .form-field select:focus{background:var(--ivory)!important;background-image:none!important}
 .form-field input[aria-invalid=true],.form-field textarea[aria-invalid=true],.form-field select[aria-invalid=true]{border-color:var(--wine);box-shadow:0 0 0 3px rgba(107,15,26,.1)}
 .form-field input:disabled,.form-field select:disabled,.form-field textarea:disabled{opacity:.7;cursor:not-allowed}
 .form-field input:-webkit-autofill{-webkit-text-fill-color:var(--espresso);box-shadow:0 0 0 1000px #fffaf2 inset}
