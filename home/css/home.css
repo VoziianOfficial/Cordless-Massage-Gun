@@ -743,3 +743,32 @@
     max-height: 300px;
   }
 }
+
+.quiet-copy {
+  min-width: 0;
+  padding-right: clamp(10px, 1.6vw, 26px);
+}
+
+.quiet-features {
+  width: min(100%, 520px);
+  margin-right: clamp(12px, 2vw, 34px);
+}
+
+.quiet-feature {
+  min-width: 0;
+}
+
+.quiet-visual {
+  min-width: 0;
+}
+
+@media(max-width:900px) {
+  .quiet-copy {
+    padding-right: 0;
+  }
+
+  .quiet-features {
+    width: 100%;
+    margin-right: 0;
+  }
+}
