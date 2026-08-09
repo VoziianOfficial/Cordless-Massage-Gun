@@ -37,7 +37,7 @@
 .action-section .action-card__image{height:clamp(136px,13.2vw,168px)}.action-section .action-card__icon{top:calc(clamp(136px,13.2vw,168px) - 40px)}@media(max-width:1100px){.action-section .action-card__image{height:142px}.action-section .action-card__icon{top:102px}}@media(max-width:760px){.action-section .action-card__image{height:102px}.action-section .action-card__icon{top:72px}}
 
 #attachments .attachments-layout{grid-template-columns:minmax(360px,.88fr) minmax(0,1.12fr);gap:clamp(24px,4vw,56px);align-items:stretch;margin-top:28px}
-#attachments .attachments-gallery{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;min-height:clamp(420px,46vw,610px)}
+#attachments .attachments-gallery{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;height:clamp(340px,34vw,460px);min-height:0}
 #attachments .attachment-thumbs{display:grid;align-content:start;gap:10px}
 #attachments .attachment-thumb{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--ivory);padding:0;overflow:hidden;cursor:pointer;box-shadow:0 10px 24px rgba(33,26,23,.05);transition:border-color .2s,box-shadow .2s,transform .2s}
 #attachments .attachment-thumb.is-active{border:2px solid var(--wine);box-shadow:0 14px 28px rgba(107,15,26,.14)}
@@ -56,15 +56,15 @@
 
 @media(max-width:1100px){
   #attachments .attachments-layout{grid-template-columns:1fr;gap:22px}
-  #attachments .attachments-gallery{min-height:440px}
+  #attachments .attachments-gallery{height:390px;min-height:0}
 }
 
 @media(max-width:760px){
   #attachments .attachments-layout{margin-top:20px}
-  #attachments .attachments-gallery{grid-template-columns:1fr;min-height:0}
+  #attachments .attachments-gallery{grid-template-columns:1fr;height:auto;min-height:0}
   #attachments .attachment-thumbs{display:flex;order:2;overflow-x:auto}
   #attachments .attachment-thumb{min-width:72px;width:72px}
-  #attachments .attachment-product{min-height:360px}
+  #attachments .attachment-product{height:300px;min-height:0}
   #attachments .attachment-list{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:158px;gap:10px;overflow:visible;scroll-snap-type:none;padding-bottom:0}
   #attachments .attachment-item{min-width:0;scroll-snap-align:unset}
   #attachments .attachment-item h3{height:36px;padding:0 10px;font-size:.62rem;line-height:36px}
