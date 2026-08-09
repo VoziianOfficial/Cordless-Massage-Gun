@@ -1,6 +1,13 @@
 (function(){
   'use strict';
   const cfg=window.SITE_CONFIG||{};
+  const configScript=document.querySelector('script[src$="config/config.js"]');
+  const siteRoot=new URL(configScript?.src||'./',location.href);
+  if(siteRoot.pathname.endsWith('/config/config.js'))siteRoot.pathname=siteRoot.pathname.slice(0,-'config/config.js'.length);
+  const sitePath=(path)=>typeof path==='string'&&path.startsWith('/')?new URL(path.slice(1),siteRoot.href).href:path;
+  const normalizePaths=(value)=>{if(Array.isArray(value)){value.forEach(normalizePaths);return}if(value&&typeof value==='object'){Object.keys(value).forEach(key=>{const item=value[key];if(typeof item==='string'&&item.startsWith('/'))value[key]=sitePath(item);else normalizePaths(item)})}};
+  normalizePaths(cfg);
+  window.PulsoPath=sitePath;
   const get=(path)=>path.split('.').reduce((v,k)=>v&&v[k],cfg);
   const money=(value)=>new Intl.NumberFormat('en-US',{style:'currency',currency:(cfg.product&&cfg.product.currency)||'USD',maximumFractionDigits:0}).format(value||0);
   window.PulsoConfig={get,money,cfg};
