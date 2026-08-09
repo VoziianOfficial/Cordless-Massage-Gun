@@ -844,9 +844,7 @@ body.is-locked {
     padding: 56px 0
   }
 
-  .benefit-row {
-    margin-inline: -14px
-  }
+
 
   .legal-consent {
     align-items: stretch;
@@ -1227,4 +1225,56 @@ h3,
 .cart-title,
 .drawer-head h2 {
   letter-spacing: .04em !important;
+}
+
+@media(max-width:900px) {
+
+  main,
+  .section-intro,
+  .page-hero__copy,
+  .editorial-panel,
+  .durability-band,
+  .page-cta,
+  .benefit,
+  .site-footer,
+  .footer-brand,
+  .footer-col,
+  .legal-consent {
+    text-align: center
+  }
+
+  .section-intro,
+  .section-intro p,
+  .page-hero p,
+  .editorial-panel p,
+  .durability-band p,
+  .footer-brand p,
+  .legal-consent p {
+    margin-inline: auto
+  }
+
+  .page-cta,
+  .benefit,
+  .footer-bottom,
+  .legal-consent {
+    justify-items: center;
+    align-items: center
+  }
+
+  .benefit,
+  .footer-grid,
+  .drawer-actions {
+    justify-content: center
+  }
+
+  .site-footer .brand,
+  .footer-brand .brand,
+  .page-cta .btn,
+  .legal-consent button {
+    margin-inline: auto
+  }
+
+  .form-field {
+    text-align: left
+  }
 }

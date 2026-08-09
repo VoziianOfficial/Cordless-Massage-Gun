@@ -43,3 +43,5 @@
 .form-status{min-height:18px;margin-top:10px;color:var(--wine);font-size:.78rem;font-weight:800}
 .form-status.is-success{color:#5f7800}
 @media(max-width:900px){#form{padding:30px 0}.contact-form-section{grid-template-columns:1fr}.contact-form-panel{min-height:0;padding:28px}.contact-product-cutout{width:min(72%,260px);margin:14px auto -6px}.contact-form-wrap{padding:26px}.contact-form-panel h2{max-width:520px}}
+
+@media(max-width:900px){.contact-hero,.contact-hero__grid,.contact-detail,.collab__copy,.contact-form-panel,.contact-form-wrap{text-align:center}.contact-hero__grid,.collab,.contact-form-section{grid-template-columns:1fr}.contact-intro,.contact-form-panel h2,.contact-form-panel>p:not(.eyebrow),.contact-points,.collab__note{margin-inline:auto}.contact-details{grid-template-columns:1fr}.contact-points li{padding-left:0}.contact-points li::before,.contact-points li::after{display:none}.collab__actions{justify-content:center}.form-field{text-align:left}}

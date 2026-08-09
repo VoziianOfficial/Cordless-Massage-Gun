@@ -10,3 +10,5 @@
 .cart-policy{align-items:flex-start}
 .cart-policy .real-icon{width:36px;height:36px;border:1px solid #d4c7b8;background:var(--ivory);font-size:1.18rem;box-shadow:0 10px 20px rgba(33,26,23,.07)}
 .cart-policy:hover .real-icon{transform:translateY(-2px);border-color:#a48d73;color:var(--espresso);box-shadow:0 14px 26px rgba(33,26,23,.12)}
+
+@media(max-width:900px){.cart-page,.cart-panel,.checkout-panel,.cart-item,.cart-policy{text-align:center}.cart-page__grid{grid-template-columns:1fr}.checkout-panel{position:static}.cart-item{justify-items:center}.cart-item__controls,.discount-row,.summary-row,.pay-marks,.cart-policy{justify-content:center}.cart-policies{grid-template-columns:1fr}.shipping-grid{grid-template-columns:1fr}.shipping-grid input{grid-column:auto}}

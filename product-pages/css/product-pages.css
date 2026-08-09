@@ -1038,3 +1038,59 @@
         grid-template-columns: repeat(5, minmax(0, 1fr))
     }
 }
+
+@media(max-width:900px) {
+
+    .page-hero__copy,
+    .editorial-panel,
+    .spec-tile,
+    .selector-panel,
+    .attachment-card,
+    .bundle-page-card,
+    .review-wall article,
+    .routine-card__copy,
+    .durability-band,
+    .page-cta,
+    .shop-buy,
+    .bundle-story__intro,
+    .bundle-parallax {
+        text-align: center
+    }
+
+    .page-hero p,
+    .editorial-panel p,
+    .spec-tile p,
+    .selector-panel p,
+    .attachment-card p,
+    .review-wall h3,
+    .review-wall article > p:not(.stars),
+    .durability-band p,
+    .shop-buy > p,
+    .bundle-story__intro p:not(.eyebrow) {
+        margin-inline: auto
+    }
+
+    .review-filter,
+    .page-cta,
+    .mini-speed,
+    .shop-buy .product-actions,
+    .shop-buy .product-meta,
+    .shop-buy .product-price {
+        justify-content: center
+    }
+
+    .spec-tile,
+    .attachment-card,
+    .bundle-page-card,
+    .review-wall article,
+    .selector-panel {
+        justify-items: center
+    }
+
+    .page-hero .btn,
+    .editorial-panel .btn,
+    .page-cta .btn,
+    .bundle-parallax__cta {
+        margin-inline: auto
+    }
+}

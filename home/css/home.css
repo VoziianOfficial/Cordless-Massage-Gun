@@ -299,3 +299,87 @@
     overflow: visible;
   }
 }
+
+@media(max-width:900px){
+  .hero__copy,
+  .product-info,
+  .solution-card,
+  .rhythm-feature,
+  .rhythm-services,
+  .rhythm-service,
+  .action-intro,
+  .action-showcase__copy,
+  .story-copy,
+  .quiet-copy,
+  .included-copy,
+  .engineering-copy,
+  .why-copy,
+  .rating-panel,
+  .review-card,
+  .about-card__copy,
+  .faq-layout,
+  .support-card,
+  .offer-copy,
+  .final-copy,
+  .bundle-card,
+  .feature-tile,
+  .how-step {
+    text-align: center;
+  }
+
+  .hero__copy p,
+  .product-info > p,
+  .solution-card p,
+  .action-intro p,
+  .action-showcase__copy,
+  .action-showcase__copy p,
+  .story-copy > p,
+  .quiet-copy p,
+  .included-copy p,
+  .engineering-copy p,
+  .why-copy p,
+  .rating-panel,
+  .about-card p,
+  .offer-copy p,
+  .final-copy p,
+  .support-card,
+  .story-copy__stack span {
+    margin-inline: auto;
+  }
+
+  .hero__actions,
+  .product-meta,
+  .product-price,
+  .speed-label,
+  .product-actions,
+  .countdown,
+  .offer-price,
+  .comparison-cta,
+  .review-person,
+  .action-play,
+  .rhythm-cta,
+  .quiet-feature,
+  .engineering-item {
+    justify-content: center;
+  }
+
+  .product-thumbs,
+  .speed-cards {
+    justify-content: center;
+  }
+
+  .solution-list li,
+  .included-checklists .checklist li,
+  .checklist li {
+    justify-content: center;
+  }
+
+  .action-showcase__copy {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .how-step {
+    justify-items: center;
+  }
+}
