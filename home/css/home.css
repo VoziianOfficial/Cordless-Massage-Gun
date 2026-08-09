@@ -69,3 +69,42 @@
   #attachments .attachment-item{min-width:0;scroll-snap-align:unset}
   #attachments .attachment-item h3{height:36px;padding:0 10px;font-size:.62rem;line-height:36px}
 }
+
+.compare-section{padding:clamp(24px,3vw,42px) 0;background:var(--cream);min-height:calc(100svh - var(--header-offset));display:grid;align-items:center}
+.compare-section .site-container{width:min(1500px,calc(100% - 40px))}
+.compare-section .comparison{overflow-x:visible;border:1px solid rgba(33,26,23,.09);border-bottom:0;background:rgba(255,253,248,.22);box-shadow:0 18px 45px rgba(33,26,23,.045)}
+.compare-section .compare-grid{min-width:0;display:grid;grid-template-columns:1.24fr repeat(3,1fr);border:0}
+.compare-section .compare-cell{min-height:56px;padding:12px 18px;border:0;border-top:1px solid rgba(33,26,23,.09);border-right:1px solid rgba(33,26,23,.08);display:flex;align-items:center;justify-content:center;text-align:center;font-size:.82rem;font-weight:700;color:var(--espresso)}
+.compare-section .compare-cell:nth-child(4n){border-right:0}
+.compare-section .compare-head{min-height:218px;padding:16px 18px 14px;border-top:0;flex-direction:column;gap:5px;position:relative}
+.compare-section .compare-head img{width:164px;height:132px;max-width:82%;object-fit:contain;object-position:center;mix-blend-mode:multiply;filter:drop-shadow(0 12px 12px rgba(33,26,23,.12))}
+.compare-section .compare-head b{display:block;font-size:1.18rem;line-height:1.05}
+.compare-section .compare-head small{font-size:.78rem;color:var(--muted);line-height:1.1}
+.compare-section .compare-intro{align-items:flex-start;justify-content:flex-start;text-align:left;gap:8px}
+.compare-section .compare-intro .eyebrow{font-size:.7rem;margin-bottom:2px}
+.compare-section .compare-intro h2{font-size:clamp(3.1rem,4.6vw,5.35rem);line-height:.84;margin:0;max-width:390px}
+.compare-section .compare-intro p:not(.eyebrow){max-width:365px;margin-top:5px;color:var(--muted);font-size:.88rem;font-weight:500;line-height:1.45}
+.compare-section .compare-highlight{background:#ebe2d7}
+.compare-section .compare-grid>.compare-highlight:nth-child(2){border-radius:8px 8px 0 0}
+.compare-section .compare-grid>.compare-highlight:nth-last-child(3){border-radius:0 0 8px 8px}
+.compare-section .compare-badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);padding:5px 10px;border-radius:4px;background:var(--wine);color:var(--ivory);font-size:.52rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+.compare-section .compare-label{justify-content:flex-start;text-align:left;gap:14px;font-size:.78rem}
+.compare-section .compare-label .ph{width:28px;height:28px;border:1px solid rgba(33,26,23,.35);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;color:var(--espresso);flex:0 0 28px}
+.compare-section .compare-mark .ph{font-size:1.12rem}
+.compare-section .mark-yes,.compare-section .compare-highlight strong{color:var(--lime);font-weight:900}
+.compare-section .mark-mixed,.compare-section .mark-no{color:var(--muted)}
+.compare-section .compare-price{font-weight:900}
+.compare-section .comparison-cta{min-height:96px;margin-top:10px;padding:20px clamp(20px,4vw,78px);border-radius:7px;background:linear-gradient(90deg,#300509,var(--wine));color:var(--ivory);display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center}
+.compare-section .comparison-cta__icon{width:56px;height:56px;border:1px solid rgba(255,253,248,.35);border-radius:50%;display:grid;place-items:center;color:var(--lime);font-size:1.7rem;background:rgba(255,253,248,.06)}
+.compare-section .comparison-cta b{display:block;font-family:var(--display);font-size:clamp(1.55rem,2.2vw,2.25rem);line-height:.9;text-transform:uppercase}
+.compare-section .comparison-cta p{margin-top:4px;color:#e1d8cf;font-size:.82rem}
+.compare-section .comparison-cta .btn{min-width:min(360px,26vw);background:#520a14;box-shadow:none}
+.compare-section .comparison-cta .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.12)}
+
+@media(max-width:1040px){
+  .compare-section{align-items:start}
+  .compare-section .comparison{overflow-x:auto}
+  .compare-section .compare-grid{min-width:940px}
+  .compare-section .comparison-cta{grid-template-columns:auto 1fr;align-items:center}
+  .compare-section .comparison-cta .btn{grid-column:1/-1;width:100%;min-width:0}
+}
