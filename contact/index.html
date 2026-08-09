@@ -75,27 +75,34 @@
       </div>
     </section>
     <section class="section section--ivory" id="form">
-      <div class="site-container">
-        <div class="contact-form-wrap">
+      <div class="site-container contact-form-section">
+        <aside class="contact-form-panel">
           <p class="eyebrow">Get in touch</p>
-          <h2 class="display">Tell us your idea.</h2>
+          <h2 class="display">We're here to help.</h2>
+          <p>Tell us what you need and our team will help with product guidance, support or partnership next steps.</p>
+          <ul class="contact-points">
+            <li>Brand partnerships for creators, clinics and performance teams.</li>
+            <li>Product help for setup, attachments and daily recovery routines.</li>
+            <li>Wholesale and media inquiries with clear human follow-up.</li>
+          </ul>
+          <img class="contact-product-cutout" src="../assets/images/contact-product-cutout.png" alt="PULSO massage gun and case" width="1402" height="1122" loading="lazy" decoding="async">
+        </aside>
+        <div class="contact-form-wrap">
+          <p class="eyebrow">Message us</p>
+          <h2 class="display">Send a note.</h2>
           <form action="../contact.php" method="post" data-ajax-form="">
             <input type="hidden" name="form_type" value="contact">
+            <input type="hidden" name="company" value="">
+            <input type="hidden" name="last_name" value="Inquiry">
             <div class="hp-field">
               <label>Website<input name="website" tabindex="-1"></label>
             </div>
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="first">First Name</label><input id="first" name="first_name" required="" maxlength="80">
+            <div class="form-grid form-grid--compact">
+              <div class="form-field form-field--full">
+                <label for="first">Full name</label><input id="first" name="first_name" required="" maxlength="120" placeholder="Enter your name">
               </div>
-              <div class="form-field">
-                <label for="last">Last Name</label><input id="last" name="last_name" required="" maxlength="80">
-              </div>
-              <div class="form-field">
-                <label for="email">Email</label><input id="email" name="email" type="email" required="" maxlength="160">
-              </div>
-              <div class="form-field">
-                <label for="company">Company / Brand</label><input id="company" name="company" maxlength="120">
+              <div class="form-field form-field--full">
+                <label for="email">Email address</label><input id="email" name="email" type="email" required="" maxlength="160" placeholder="hello@example.com">
               </div>
               <div class="form-field form-field--full">
                 <label for="subject">Subject</label><select id="subject" name="subject">
@@ -106,23 +113,20 @@
                     Order support
                   </option>
                   <option value="advertise">
-                    Advertise & Collaborate
+                    Partnership inquiry
                   </option>
                   <option value="media">
-                    Media & Press
+                    Media request
                   </option>
                 </select>
               </div>
               <div class="form-field form-field--full">
                 <label for="message">Message</label>
-                <textarea id="message" name="comments" required="" maxlength="3000" placeholder="Tell us about your question, goals or idea."></textarea>
+                <textarea id="message" name="comments" required="" maxlength="3000" placeholder="Tell us about your question, goal or idea."></textarea>
               </div>
-            </div><button class="btn btn--wine btn--wide" type="submit">Send message</button>
+            </div><button class="btn btn--wine btn--wide contact-submit" type="submit">Send message</button>
             <p class="form-status" aria-live="polite"></p>
           </form>
-          <div class="response-card">
-            <strong>Human replies. Clear next steps.</strong>
-          </div>
         </div>
       </div>
     </section>
