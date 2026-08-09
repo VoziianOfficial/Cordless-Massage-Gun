@@ -163,7 +163,8 @@
       wrap.append(img,copy);
       host.append(wrap);
     });
-    q('[data-drawer-total]',drawer).textContent=window.PulsoConfig.money(window.PulsoCart.subtotal());
+    const total=q('[data-drawer-total]',drawer);
+    if(total)total.textContent=window.PulsoConfig.money(window.PulsoCart.subtotal());
   }
   const openDrawer=(trigger)=>{if(!drawer)return;returnFocus=trigger||document.activeElement;renderDrawer();drawer.classList.add('is-open');drawer.setAttribute('aria-hidden','false');document.body.classList.add('is-locked');q('.drawer-close',drawer)?.focus()};
   window.openCartDrawer=openDrawer;
