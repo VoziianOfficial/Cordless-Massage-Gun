@@ -147,7 +147,10 @@
 
 .selector-menu {
     display: grid;
-    align-content: start
+    align-content: start;
+    position: sticky;
+    top: calc(var(--header-offset) + 18px);
+    align-self: start
 }
 
 .selector-btn {
@@ -439,6 +442,10 @@
         order: -1
     }
 
+    .selector-menu {
+        position: static
+    }
+
     .spec-grid {
         grid-template-columns: repeat(2, 1fr)
     }
@@ -547,6 +554,24 @@
 
 @media(max-width:800px) {
     #care .editorial-image {
+        height: 280px
+    }
+}
+
+#control .editorial-image {
+    height: 360px;
+    min-height: 0;
+    align-self: start;
+    overflow: hidden
+}
+
+#control .editorial-image img {
+    height: 100%;
+    object-fit: cover
+}
+
+@media(max-width:800px) {
+    #control .editorial-image {
         height: 280px
     }
 }
