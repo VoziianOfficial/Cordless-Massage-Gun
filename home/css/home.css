@@ -156,3 +156,18 @@
   #faq .faq-question{min-height:66px;padding:16px 16px 16px 18px;font-size:.8rem}
   #faq .faq-answer p{padding:0 18px 18px;font-size:.82rem}
 }
+
+@media(min-width:761px){
+  .quiet-grid,.included-grid,.engineering-grid{align-items:start}
+  .rhythm-services,.quiet-copy,.included-copy,.engineering-copy{position:sticky;top:calc(var(--header-offset) + 24px);align-self:start}
+  .support-card{position:sticky;top:calc(var(--header-offset) + 24px);align-self:start}
+}
+
+@media(max-width:1100px){
+  .rhythm-services{position:static}
+}
+
+@media(max-width:760px){
+  .quiet-copy,.included-copy,.engineering-copy{position:static}
+  .support-card{position:static}
+}
